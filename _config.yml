@@ -16,7 +16,7 @@ timezone: Asia/xi'an
 
 title: 山间草夫 # the main title
 
-tagline: 费福朝 (feifuzhao) , 记录学习、项目和技术笔记 # it will display as the subtitle
+tagline: 费福朝 (feifuzhao) 的技术博客 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   记录 C++、操作系统、Git、项目开发与学习过程的个人技术博客。
@@ -99,8 +99,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
-
+avatar: /assets/img/avatar.png
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
 social_preview_image: # string, local or CORS resources
