@@ -25,4 +25,25 @@ bundle exec jekyll serve
 YYYY-MM-DD-title.md
 ```
 
+文章头部模板：
+
+```yaml
+---
+title: 文章标题
+date: 2026-06-14 20:00:00 +0800
+categories: [文章分类]
+tags: [标签一, 标签二]
+---
+```
+
+目前使用的分类：
+
+- `C++`：语言基础、STL 和工程实践
+- `Linux`：常用工具、文件系统和操作系统
+- `算法`：算法基础、控制算法和题目总结
+- `Git`：版本管理与协作流程
+- `项目`：开发过程和项目复盘
+
+`categories` 保持简单，一个文章使用一个主要分类；`tags` 用于标记具体知识点。
+
 提交到 `main` 或 `master` 分支后，GitHub Actions 会自动构建并部署博客。
