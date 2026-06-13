@@ -1,39 +1,28 @@
-# Chirpy Starter
+# 山间草夫
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+费福朝的个人技术博客，主要记录 C++、操作系统、Git、项目开发与学习过程。
 
-A minimal, ready-to-use template for creating a blog with the [**Chirpy**][chirpy] Jekyll theme. Get up and running in minutes with all critical files pre-configured.
+访问地址：<https://shanjiancaofu.github.io>
 
-## Why This Starter Exists
+## 本地运行
 
-When installing Chirpy through [RubyGems.org][gem], Jekyll can only read a subset of theme files (`_data`, `_layouts`, `_includes`, `_sass`, `assets`) and limited `_config.yml` options from the gem. As a result, users cannot enjoy the full out-of-the-box experience that Chirpy offers.
+项目基于 [Jekyll](https://jekyllrb.com/) 和 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 主题。
 
-To unlock all features, the following files must be present in your Jekyll site:
+安装 Ruby 和 Bundler 后运行：
 
 ```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+bundle install
+bundle exec jekyll serve
 ```
 
-This starter bundles those files from the latest **Chirpy** release along with a [CD][CD] workflow, so you can start writing immediately.
+浏览器访问 <http://127.0.0.1:4000>。
 
-## Usage
+## 写作
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+文章放在 `_posts` 目录，文件名格式为：
 
-## Contributing
+```text
+YYYY-MM-DD-title.md
+```
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+提交到 `main` 或 `master` 分支后，GitHub Actions 会自动构建并部署博客。

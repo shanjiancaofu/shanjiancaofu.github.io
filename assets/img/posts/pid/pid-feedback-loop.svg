@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#52616b"/>
+    </marker>
+    <style>
+      .box { fill: #f7f9fb; stroke: #52616b; stroke-width: 2; rx: 10; }
+      .line { fill: none; stroke: #52616b; stroke-width: 2.5; marker-end: url(#arrow); }
+      .text { fill: #263238; font: 20px Arial, sans-serif; text-anchor: middle; }
+      .label { fill: #52616b; font: 17px Arial, sans-serif; text-anchor: middle; }
+    </style>
+  </defs>
+  <text class="label" x="55" y="112">r(t)</text>
+  <path class="line" d="M85 105 H165"/>
+  <circle cx="195" cy="105" r="30" fill="#fff" stroke="#52616b" stroke-width="2"/>
+  <text class="text" x="195" y="112">sum</text>
+  <text class="label" x="183" y="68">+</text>
+  <text class="label" x="183" y="151">-</text>
+  <path class="line" d="M225 105 H315"/>
+  <text class="label" x="270" y="88">e(t)</text>
+  <rect class="box" x="315" y="65" width="175" height="80"/>
+  <text class="text" x="402" y="112">PID Controller</text>
+  <path class="line" d="M490 105 H585"/>
+  <text class="label" x="537" y="88">u(t)</text>
+  <rect class="box" x="585" y="65" width="175" height="80"/>
+  <text class="text" x="672" y="112">Plant</text>
+  <path class="line" d="M760 105 H885"/>
+  <text class="label" x="835" y="88">y(t)</text>
+  <path class="line" d="M825 105 V235 H195 V135"/>
+  <text class="label" x="500" y="263">negative feedback</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#52616b"/>
+    </marker>
+    <style>
+      .module { fill: #f7f9fb; stroke: #d84315; stroke-width: 3; rx: 14; }
+      .device { fill: #f7f9fb; stroke: #52616b; stroke-width: 2; rx: 10; }
+      .wire { fill: none; stroke: #52616b; stroke-width: 2.5; marker-end: url(#arrow); }
+      .power { stroke: #d84315; }
+      .ground { stroke: #263238; }
+      .signal { stroke: #1565c0; }
+      .text { fill: #263238; font: 18px Arial, sans-serif; text-anchor: middle; }
+      .small { fill: #52616b; font: 15px Arial, sans-serif; text-anchor: middle; }
+      .title { fill: #263238; font: bold 24px Arial, sans-serif; text-anchor: middle; }
+    </style>
+  </defs>
+  <text class="title" x="500" y="38">L298N dual DC motor wiring</text>
+
+  <rect class="device" x="35" y="95" width="190" height="110"/>
+  <text class="text" x="130" y="140">7-12 V supply</text>
+  <text class="small" x="130" y="172">positive / GND</text>
+
+  <rect class="device" x="35" y="330" width="190" height="130"/>
+  <text class="text" x="130" y="372">Microcontroller</text>
+  <text class="small" x="130" y="405">PWM, IN1-IN4</text>
+  <text class="small" x="130" y="430">common GND</text>
+
+  <rect class="module" x="345" y="85" width="310" height="390"/>
+  <text class="title" x="500" y="125">L298N</text>
+  <text class="small" x="405" y="175">12V</text>
+  <text class="small" x="500" y="175">GND</text>
+  <text class="small" x="595" y="175">5V OUT</text>
+  <text class="small" x="405" y="265">ENA / IN1 / IN2</text>
+  <text class="small" x="595" y="265">ENB / IN3 / IN4</text>
+  <text class="small" x="405" y="390">OUT1 / OUT2</text>
+  <text class="small" x="595" y="390">OUT3 / OUT4</text>
+
+  <rect class="device" x="775" y="95" width="190" height="110"/>
+  <text class="text" x="870" y="140">Motor A</text>
+  <text class="small" x="870" y="172">OUT1 / OUT2</text>
+  <rect class="device" x="775" y="340" width="190" height="110"/>
+  <text class="text" x="870" y="385">Motor B</text>
+  <text class="small" x="870" y="417">OUT3 / OUT4</text>
+
+  <path class="wire power" d="M225 125 H345"/>
+  <path class="wire ground" d="M225 175 H300 V205 H345"/>
+  <path class="wire signal" d="M225 375 H300 V265 H345"/>
+  <path class="wire ground" d="M225 430 H280 V455 H345"/>
+  <path class="wire signal" d="M655 390 H715 V150 H775"/>
+  <path class="wire signal" d="M655 415 H735 V395 H775"/>
+
+  <text class="small" x="284" y="112">+7-12V</text>
+  <text class="small" x="285" y="196">GND</text>
+  <text class="small" x="284" y="355">control</text>
+  <text class="small" x="296" y="480">all grounds must be connected</text>
+</svg>
