@@ -3,6 +3,6 @@
 icon: fas fa-info-circle
 order: 4
 ---
+你好，我是费福朝，也可以叫我山间草夫。
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+这里是我的个人技术博客，用来记录学习过程、项目开发和踩坑笔记。
