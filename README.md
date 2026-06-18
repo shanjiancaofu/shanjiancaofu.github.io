@@ -8,7 +8,25 @@
 
 项目基于 [Jekyll](https://jekyllrb.com/) 和 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 主题。
 
-安装 Ruby 和 Bundler 后运行：
+### Docker 运行
+
+在 WSL2 项目目录运行：
+
+```shell
+docker compose -f docker/docker-compose.yml up --build
+```
+
+浏览器访问 <http://127.0.0.1:4000>。
+
+停止服务：
+
+```shell
+docker compose -f docker/docker-compose.yml down
+```
+
+### 本机 Ruby 运行
+
+如果不用 Docker，也可以安装 Ruby 和 Bundler 后运行：
 
 ```shell
 bundle install

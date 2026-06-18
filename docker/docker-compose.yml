@@ -1,0 +1,18 @@
+services:
+  blog:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: shanjiancaofu-blog
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    volumes:
+      - ..:/srv/jekyll
+      - bundle-cache:/usr/local/bundle
+    environment:
+      JEKYLL_ENV: development
+    command: sh -c "git config --global --add safe.directory /srv/jekyll && bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling"
+
+volumes:
+  bundle-cache:
