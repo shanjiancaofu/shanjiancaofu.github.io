@@ -1,15 +1,17 @@
 <section class="home-intro" aria-labelledby="home-intro-title">
   <div class="home-intro__content">
     <p class="home-intro__eyebrow"><span></span> PERSONAL TECH NOTES</p>
-    <h1 id="home-intro-title">把 C++、Linux 和算法，整理成能反复查阅的技术笔记。</h1>
+    <h1 id="home-intro-title">把 Linux、RT-Thread、嵌入式和算法，整理成能反复查阅的技术笔记。</h1>
     <p class="home-intro__description">
-      这里记录从基础知识到项目实践的学习路径：命令行、数据结构、控制算法，以及踩坑后的复盘。目前已整理 {{ site.posts | size }} 篇文章。
+      这里记录从基础知识到工程实践的学习路径：Linux 工具链、RT-Thread 内核、STM32 外设、AI 部署和算法复盘。目前已整理 {{ site.posts | size }} 篇文章。
     </p>
 
     <nav class="home-intro__links" aria-label="内容分类">
-      <a href="{{ '/categories/算法/' | relative_url }}">算法</a>
+      <a href="{{ '/categories/rt-thread/' | relative_url }}">RT-Thread</a>
       <a href="{{ '/categories/linux/' | relative_url }}">Linux</a>
-      <a href="{{ '/categories/c/' | relative_url }}">C++</a>
+      <a href="{{ '/categories/嵌入式/' | relative_url }}">嵌入式</a>
+      <a href="{{ '/categories/算法/' | relative_url }}">算法</a>
+      <a href="{{ '/categories/ai/' | relative_url }}">AI</a>
       <a href="{{ '/about/' | relative_url }}">关于我</a>
     </nav>
   </div>
@@ -22,8 +24,8 @@
       </div>
       <div class="code-card__body">
         <p><i>01</i><span class="code-keyword">auto</span> path = learn({</p>
-        <p><i>02</i>&nbsp;&nbsp;<span class="code-string">"C++"</span>, <span class="code-string">"Linux"</span>,</p>
-        <p><i>03</i>&nbsp;&nbsp;<span class="code-string">"Algorithm"</span>, <span class="code-string">"Project"</span></p>
+        <p><i>02</i>&nbsp;&nbsp;<span class="code-string">"Linux"</span>, <span class="code-string">"RT-Thread"</span>,</p>
+        <p><i>03</i>&nbsp;&nbsp;<span class="code-string">"STM32"</span>, <span class="code-string">"AI"</span></p>
         <p><i>04</i>});</p>
       </div>
       <div class="code-card__status">
@@ -41,20 +43,20 @@
   </div>
 
   <div class="featured-notes__grid">
-    <a href="{{ '/posts/suanfa-one/' | relative_url }}">
-      <small>算法基础</small>
-      <strong>前缀和与差分</strong>
-      <em>把高频查询问题降到更舒服的复杂度。</em>
+    <a href="{{ '/posts/rt-thread-thread/' | relative_url }}">
+      <small>RT-Thread</small>
+      <strong>线程管理</strong>
+      <em>从线程控制块、线程状态到调度机制，梳理实时内核的基本单位。</em>
     </a>
-    <a href="{{ '/posts/linux-one/' | relative_url }}">
+    <a href="{{ '/posts/adc-dac/' | relative_url }}">
+      <small>嵌入式</small>
+      <strong>ADC/DAC 基础</strong>
+      <em>把模拟量、数字量、采样转换和 STM32 外设配置串起来。</em>
+    </a>
+    <a href="{{ '/posts/linux-makefile-one/' | relative_url }}">
       <small>Linux</small>
-      <strong>常用命令与文件操作</strong>
-      <em>从目录、权限、Vim 开始补齐日常工具链。</em>
-    </a>
-    <a href="{{ '/posts/suanfa-three/' | relative_url }}">
-      <small>控制算法</small>
-      <strong>PID 原理与实现</strong>
-      <em>把控制系统里的反馈思想写成可理解的代码。</em>
+      <strong>Makefile - 介绍</strong>
+      <em>从规则、依赖和变量开始理解工程编译的自动化流程。</em>
     </a>
   </div>
 </section>
