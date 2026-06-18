@@ -1,0 +1,68 @@
+<section class="home-intro" aria-labelledby="home-intro-title">
+  <div class="home-intro__content">
+    <p class="home-intro__eyebrow"><span></span> PERSONAL TECH NOTES</p>
+    <h1 id="home-intro-title">把 C++、Linux 和算法，整理成能反复查阅的技术笔记。</h1>
+    <p class="home-intro__description">
+      这里记录从基础知识到项目实践的学习路径：命令行、数据结构、控制算法，以及踩坑后的复盘。目前已整理 {{ site.posts | size }} 篇文章。
+    </p>
+
+    <nav class="home-intro__links" aria-label="内容分类">
+      <a href="{{ '/categories/算法/' | relative_url }}">算法</a>
+      <a href="{{ '/categories/linux/' | relative_url }}">Linux</a>
+      <a href="{{ '/categories/c/' | relative_url }}">C++</a>
+      <a href="{{ '/about/' | relative_url }}">关于我</a>
+    </nav>
+  </div>
+
+  <div class="home-intro__visual" aria-hidden="true">
+    <div class="code-card">
+      <div class="code-card__bar">
+        <span></span><span></span><span></span>
+        <small>roadmap.cpp</small>
+      </div>
+      <div class="code-card__body">
+        <p><i>01</i><span class="code-keyword">auto</span> path = learn({</p>
+        <p><i>02</i>&nbsp;&nbsp;<span class="code-string">"C++"</span>, <span class="code-string">"Linux"</span>,</p>
+        <p><i>03</i>&nbsp;&nbsp;<span class="code-string">"Algorithm"</span>, <span class="code-string">"Project"</span></p>
+        <p><i>04</i>});</p>
+      </div>
+      <div class="code-card__status">
+        <span><i></i> Keep building</span>
+        <span>{{ site.posts | size }} posts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-notes" aria-labelledby="featured-notes-title">
+  <div class="featured-notes__head">
+    <span>FEATURED NOTES</span>
+    <div id="featured-notes-title" class="featured-notes__title" role="heading" aria-level="2">推荐阅读</div>
+  </div>
+
+  <div class="featured-notes__grid">
+    <a href="{{ '/posts/suanfa-one/' | relative_url }}">
+      <small>算法基础</small>
+      <strong>前缀和与差分</strong>
+      <em>把高频查询问题降到更舒服的复杂度。</em>
+    </a>
+    <a href="{{ '/posts/linux-one/' | relative_url }}">
+      <small>Linux</small>
+      <strong>常用命令与文件操作</strong>
+      <em>从目录、权限、Vim 开始补齐日常工具链。</em>
+    </a>
+    <a href="{{ '/posts/suanfa-three/' | relative_url }}">
+      <small>控制算法</small>
+      <strong>PID 原理与实现</strong>
+      <em>把控制系统里的反馈思想写成可理解的代码。</em>
+    </a>
+  </div>
+</section>
+
+<div class="home-section-heading">
+  <div>
+    <span>RECENT WRITING</span>
+    <div class="home-section-heading__title" role="heading" aria-level="2">最近文章</div>
+  </div>
+  <a href="{{ '/archives/' | relative_url }}">查看归档 <i class="fas fa-arrow-right"></i></a>
+</div>
