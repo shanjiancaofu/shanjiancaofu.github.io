@@ -4,8 +4,6 @@ date: 2025-07-16 21:00:00 +0800
 categories: [Linux]
 tags: [Linux, Makefile, make, 编译]
 ---
-
-# 【Linux】Makefile（一）- 介绍
 本篇博客是作者在学习Linux方面知识过程中，对Makefile不够了解，从而产生了对Makefile有一个全面的认识的想法，在知道《跟我一起写Makefile》此书后，作者学习过程中整理的笔记。
 
 

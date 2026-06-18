@@ -4,9 +4,6 @@ date: 2024-06-07 21:00:00 +0800
 categories: [C++]
 tags: [C++, STL, unordered_set, LeetCode]
 ---
-
-
-
 ### unordered_set
 
 `unordered_set`与`set`非常类似,
@@ -76,4 +73,3 @@ public:
 | max_bucket_count() | 返回当前系统中，unordered_map 容器底层最多可以使用多少桶     |
 | bucket_size()      | 返回第 n 个桶中存储元素的数量                                |
 | bucket()           | 返回值为 key 的元素所在桶的编号                              |
-

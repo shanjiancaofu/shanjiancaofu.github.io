@@ -4,9 +4,6 @@ date: 2025-07-17 21:00:00 +0800
 categories: [Linux]
 tags: [Linux, Makefile, 规则, 伪目标]
 ---
-
-# 【Linux】Makefile（二）- 书写规则
-
 ## 书写规则
 
 ### 规则示例

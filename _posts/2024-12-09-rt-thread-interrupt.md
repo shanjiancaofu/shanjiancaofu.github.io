@@ -4,8 +4,7 @@ date: 2024-12-09 22:05:00 +0800
 categories: [RT-Thread]
 tags: [RT-Thread, 内核, 中断管理, Cortex-M]
 ---
-
-# 中断管理
+## 中断管理
 
 什么是中断？简单的解释就是系统正在处理某一个正常事件，忽然被另一个需要马上处理的紧急事件打断，系统转而处理这个紧急事件，待处理完毕，再恢复运行刚才被打断的事件。
 
@@ -309,7 +308,7 @@ void demo_nw_isr(int vector, void *param)
 
 为了把操作系统和系统底层的异常、中断硬件隔离开来，RT-Thread 把中断和异常封装为一组抽象接口，如下图所示：
 
-![image-20241217153946884](/assets/img/posts/rt-thread-interrupt/image-20241217153946884.png)
+![RT-Thread内核----中断管理 图 10](/assets/img/posts/rt-thread-interrupt/image-20241217153946884.png)
 
 
 ### 中断服务程序挂接
