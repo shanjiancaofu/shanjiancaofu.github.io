@@ -208,7 +208,7 @@ for item in session.get_outputs():
     print("output:", item.name, item.shape, item.type)
 ```
 
-不要假设所有模型输出都是 `[1, 25200, 85]`。自定义类别数、Lite 分支版本以及是否把 NMS 导入模型，都会改变输出形状。
+不要假设所有模型输出都是 `[1, 25200, 85]`。自定义类别数、Lite 分支版本以及是否把 NMS 导出进模型，都会改变输出形状。
 
 记录模型哈希并传到树莓派：
 

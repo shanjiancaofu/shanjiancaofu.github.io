@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">V4L2 驱动核心对象关系图</title>
+  <desc id="desc">展示用户空间设备节点、video_device、v4l2_fh、videobuf2、v4l2_device、v4l2_subdev 和硬件模块之间的关系。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#52606d"/>
+    </marker>
+    <style>
+      .title { font: 700 28px sans-serif; fill: #172033; }
+      .label { font: 600 19px sans-serif; fill: #172033; }
+      .small { font: 16px sans-serif; fill: #334e68; }
+      .layer { font: 700 20px sans-serif; fill: #52606d; }
+      .line { stroke: #52606d; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #829ab1; stroke-width: 2; stroke-dasharray: 8 7; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="780" fill="#f7f9fc"/>
+  <text x="600" y="42" text-anchor="middle" class="title">V4L2 驱动核心对象关系</text>
+
+  <text x="28" y="100" class="layer">用户空间</text>
+  <rect x="195" y="68" width="280" height="70" rx="10" fill="#38d9d0" stroke="#159e98" stroke-width="2"/>
+  <text x="335" y="98" text-anchor="middle" class="label">视频输入</text>
+  <text x="335" y="123" text-anchor="middle" class="small">/dev/video0</text>
+  <rect x="725" y="68" width="280" height="70" rx="10" fill="#74c0fc" stroke="#3182bd" stroke-width="2"/>
+  <text x="865" y="98" text-anchor="middle" class="label">视频输出</text>
+  <text x="865" y="123" text-anchor="middle" class="small">/dev/video1</text>
+
+  <line x1="20" y1="160" x2="1180" y2="160" class="dash"/>
+  <text x="28" y="202" class="layer">V4L2 Core</text>
+  <rect x="120" y="180" width="960" height="370" rx="18" fill="#dceeff" stroke="#75a7d8" stroke-width="2"/>
+
+  <rect x="175" y="220" width="320" height="105" rx="12" fill="#b7e4a8" stroke="#559b45" stroke-width="2"/>
+  <text x="335" y="255" text-anchor="middle" class="label">struct video_device</text>
+  <text x="335" y="282" text-anchor="middle" class="small">fops / ioctl_ops / lock</text>
+  <text x="335" y="307" text-anchor="middle" class="small">注册 /dev/video0</text>
+
+  <rect x="705" y="220" width="320" height="105" rx="12" fill="#b7e4a8" stroke="#559b45" stroke-width="2"/>
+  <text x="865" y="255" text-anchor="middle" class="label">struct video_device</text>
+  <text x="865" y="282" text-anchor="middle" class="small">fops / ioctl_ops / lock</text>
+  <text x="865" y="307" text-anchor="middle" class="small">注册 /dev/video1</text>
+
+  <rect x="175" y="355" width="145" height="75" rx="10" fill="#ffd8a8" stroke="#d9822b" stroke-width="2"/>
+  <text x="247" y="385" text-anchor="middle" class="label">v4l2_fh</text>
+  <text x="247" y="410" text-anchor="middle" class="small">每次 open</text>
+  <rect x="350" y="355" width="145" height="75" rx="10" fill="#ffe066" stroke="#c89b00" stroke-width="2"/>
+  <text x="422" y="385" text-anchor="middle" class="label">vb2_queue</text>
+  <text x="422" y="410" text-anchor="middle" class="small">流式缓冲</text>
+
+  <rect x="705" y="355" width="145" height="75" rx="10" fill="#ffd8a8" stroke="#d9822b" stroke-width="2"/>
+  <text x="777" y="385" text-anchor="middle" class="label">v4l2_fh</text>
+  <text x="777" y="410" text-anchor="middle" class="small">每次 open</text>
+  <rect x="880" y="355" width="145" height="75" rx="10" fill="#ffe066" stroke="#c89b00" stroke-width="2"/>
+  <text x="952" y="385" text-anchor="middle" class="label">vb2_queue</text>
+  <text x="952" y="410" text-anchor="middle" class="small">流式缓冲</text>
+
+  <rect x="440" y="462" width="320" height="65" rx="12" fill="#91d5ff" stroke="#3182bd" stroke-width="2"/>
+  <text x="600" y="489" text-anchor="middle" class="label">struct v4l2_device</text>
+  <text x="600" y="514" text-anchor="middle" class="small">聚合、命名和管理 subdev</text>
+
+  <path d="M335 138 L335 220" class="line"/>
+  <path d="M865 138 L865 220" class="line"/>
+  <path d="M275 325 L255 355" class="line"/>
+  <path d="M395 325 L415 355" class="line"/>
+  <path d="M805 325 L785 355" class="line"/>
+  <path d="M925 325 L945 355" class="line"/>
+  <path d="M440 494 L335 326" class="line"/>
+  <path d="M760 494 L865 326" class="line"/>
+
+  <line x1="20" y1="575" x2="1180" y2="575" class="dash"/>
+  <text x="28" y="615" class="layer">子设备与硬件</text>
+
+  <rect x="155" y="620" width="210" height="65" rx="11" fill="#ffb366" stroke="#cc6b16" stroke-width="2"/>
+  <text x="260" y="648" text-anchor="middle" class="label">v4l2_subdev</text>
+  <text x="260" y="672" text-anchor="middle" class="small">Sensor</text>
+  <rect x="390" y="620" width="190" height="65" rx="11" fill="#ffb366" stroke="#cc6b16" stroke-width="2"/>
+  <text x="485" y="648" text-anchor="middle" class="label">v4l2_subdev</text>
+  <text x="485" y="672" text-anchor="middle" class="small">CSI Receiver</text>
+  <rect x="605" y="620" width="190" height="65" rx="11" fill="#ffb366" stroke="#cc6b16" stroke-width="2"/>
+  <text x="700" y="648" text-anchor="middle" class="label">v4l2_subdev</text>
+  <text x="700" y="672" text-anchor="middle" class="small">ISP</text>
+  <rect x="820" y="620" width="225" height="65" rx="11" fill="#c3fae8" stroke="#2f9e79" stroke-width="2"/>
+  <text x="932" y="648" text-anchor="middle" class="label">硬件模块</text>
+  <text x="932" y="672" text-anchor="middle" class="small">DMA / Display</text>
+
+  <path d="M520 527 L290 620" class="line"/>
+  <path d="M570 527 L500 620" class="line"/>
+  <path d="M630 527 L680 620" class="line"/>
+  <path d="M865 550 L915 620" class="line"/>
+
+  <text x="600" y="737" text-anchor="middle" class="small">注：对象组合取决于驱动类型；纯 subdev 驱动不一定创建 video_device 或 vb2_queue。</text>
+</svg>
