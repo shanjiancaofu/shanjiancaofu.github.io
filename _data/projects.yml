@@ -1,0 +1,18 @@
+- name: cockpit-system
+  type: 智能座舱
+  status: V1 基线
+  stack: [C++, Linux, Qt, Jetson]
+  description: 运行在 Jetson/Linux 上的模块化智能座舱，覆盖相机、音频、车辆状态、语音 Agent、Qt UI 和诊断工具。
+  url: https://github.com/shanjiancaofu/cockpit-system
+- name: ffz-os
+  type: 操作系统学习
+  status: 持续实验
+  stack: [C, x86, 汇编, 操作系统]
+  description: 从 MBR、保护模式和分页开始，逐步实现线程、系统调用、文件系统和 shell 的 32 位 x86 toy OS。
+  url: https://github.com/shanjiancaofu/ffz-os
+- name: chassis-controller
+  type: 车载控制器
+  status: 持续开发
+  stack: [C++, Qt, i.MX6U, Jetson]
+  description: 面向车载控制器的工程项目，记录底盘控制、车机平台和嵌入式系统之间的接口与实现。
+  url: https://github.com/shanjiancaofu/chassis-controller

@@ -1,38 +1,45 @@
-<section class="home-intro" aria-labelledby="home-intro-title">
-  <div class="home-intro__content">
-    <p class="home-intro__eyebrow"><span></span> PERSONAL TECH NOTES</p>
-    <h1 id="home-intro-title">把 Linux、RT-Thread、嵌入式和算法，整理成能反复查阅的技术笔记。</h1>
-    <p class="home-intro__description">
-      这里记录从基础知识到工程实践的学习路径：Linux 工具链、RT-Thread 内核、STM32 外设、AI 部署和算法复盘。目前已整理 {{ site.posts | size }} 篇文章。
-    </p>
-
-    <nav class="home-intro__links" aria-label="内容分类">
-      <a href="{{ '/categories/rt-thread/' | relative_url }}">RT-Thread</a>
-      <a href="{{ '/categories/linux/' | relative_url }}">Linux</a>
-      <a href="{{ '/categories/嵌入式/' | relative_url }}">嵌入式</a>
-      <a href="{{ '/categories/算法/' | relative_url }}">算法</a>
-      <a href="{{ '/categories/ai/' | relative_url }}">AI</a>
-      <a href="{{ '/about/' | relative_url }}">关于我</a>
-    </nav>
+<section class="home-intro home-hero" aria-labelledby="home-intro-title">
+  <div class="home-hero__topline">
+    <span>SHANJIANCAOFU / TECH NOTES</span>
+    <span>{{ site.time | date: "%Y" }}</span>
   </div>
-
-  <div class="home-intro__visual" aria-hidden="true">
-    <div class="code-card">
-      <div class="code-card__bar">
-        <span></span><span></span><span></span>
-        <small>roadmap.cpp</small>
-      </div>
-      <div class="code-card__body">
-        <p><i>01</i><span class="code-keyword">auto</span> path = learn({</p>
-        <p><i>02</i>&nbsp;&nbsp;<span class="code-string">"Linux"</span>, <span class="code-string">"RT-Thread"</span>,</p>
-        <p><i>03</i>&nbsp;&nbsp;<span class="code-string">"STM32"</span>, <span class="code-string">"AI"</span></p>
-        <p><i>04</i>});</p>
-      </div>
-      <div class="code-card__status">
-        <span><i></i> Keep building</span>
-        <span>{{ site.posts | size }} posts</span>
-      </div>
+  <div class="home-hero__grid">
+    <div class="home-intro__content">
+      <p class="home-intro__eyebrow"><span></span> PERSONAL TECH NOTES</p>
+      <h1 id="home-intro-title">把 Linux、RT-Thread、<br>嵌入式和算法，<br>整理成能反复查阅的<br>技术笔记。</h1>
+      <p class="home-intro__description">
+        这里记录从基础知识到工程实践的学习路径：Linux 工具链、RT-Thread 内核、STM32 外设、AI 部署和算法复盘。目前已整理 {{ site.posts | size }} 篇文章。
+      </p>
+      <nav class="home-intro__topics" aria-label="文章主题">
+        <a href="{{ '/tags/rt-thread/' | relative_url }}">RT-Thread</a>
+        <a href="{{ '/categories/linux/' | relative_url }}">Linux</a>
+        <a href="{{ '/categories/嵌入式/' | relative_url }}">嵌入式</a>
+        <a href="{{ '/categories/算法/' | relative_url }}">算法</a>
+        <a href="{{ '/tags/ai/' | relative_url }}">AI</a>
+        <a href="{{ '/about/' | relative_url }}">关于我</a>
+      </nav>
     </div>
+    <aside class="home-hero__aside" aria-label="博客概览">
+      <div class="home-code-card">
+        <div class="home-code-card__bar">
+          <span></span><span></span><span></span>
+          <small>roadmap.cpp</small>
+        </div>
+        <pre><code><b>auto</b> path = learn({
+  <i>"Linux"</i>, <i>"RT-Thread"</i>,
+  <i>"STM32"</i>, <i>"AI"</i>
+});</code></pre>
+        <div class="home-code-card__footer">
+          <span><i></i> Keep building</span>
+          <span>{{ site.posts | size }} posts</span>
+        </div>
+      </div>
+      <dl class="home-hero__stats">
+        <div><dt>文章</dt><dd>{{ site.posts | size }}</dd></div>
+        <div><dt>分类</dt><dd>{{ site.categories | size }}</dd></div>
+        <div><dt>项目</dt><dd>{{ site.data.projects | size }}</dd></div>
+      </dl>
+    </aside>
   </div>
 </section>
 
@@ -58,6 +65,27 @@
       <strong>Makefile - 介绍</strong>
       <em>从规则、依赖和变量开始理解工程编译的自动化流程。</em>
     </a>
+  </div>
+</section>
+
+<section class="home-projects" aria-labelledby="home-projects-title">
+  <div class="home-section-heading">
+    <div>
+      <span>SELECTED PROJECTS</span>
+      <div id="home-projects-title" class="home-section-heading__title" role="heading" aria-level="2">正在做的项目</div>
+    </div>
+    <a href="{{ '/projects/' | relative_url }}">查看全部 <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="home-projects__grid">
+    {% for project in site.data.projects %}
+      <a class="home-project" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
+        <div class="home-project__topline"><span>{{ project.type }}</span><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+        <small class="home-project__stack">{{ project.stack | join: ' · ' }}</small>
+        <small>{{ project.status }}</small>
+      </a>
+    {% endfor %}
   </div>
 </section>
 
