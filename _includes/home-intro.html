@@ -11,11 +11,11 @@
         这里记录从基础知识到工程实践的学习路径：Linux 工具链、RT-Thread 内核、STM32 外设、AI 部署和算法复盘。目前已整理 {{ site.posts | size }} 篇文章。
       </p>
       <nav class="home-intro__topics" aria-label="文章主题">
-        <a href="{{ '/tags/rt-thread/' | relative_url }}">RT-Thread</a>
+        <a href="{{ '/categories/rt-thread/' | relative_url }}">RT-Thread</a>
         <a href="{{ '/categories/linux/' | relative_url }}">Linux</a>
         <a href="{{ '/categories/嵌入式/' | relative_url }}">嵌入式</a>
         <a href="{{ '/categories/算法/' | relative_url }}">算法</a>
-        <a href="{{ '/tags/ai/' | relative_url }}">AI</a>
+        <a href="{{ '/categories/ai/' | relative_url }}">AI</a>
         <a href="{{ '/about/' | relative_url }}">关于我</a>
       </nav>
     </div>
@@ -34,11 +34,6 @@
           <span>{{ site.posts | size }} posts</span>
         </div>
       </div>
-      <dl class="home-hero__stats">
-        <div><dt>文章</dt><dd>{{ site.posts | size }}</dd></div>
-        <div><dt>分类</dt><dd>{{ site.categories | size }}</dd></div>
-        <div><dt>项目</dt><dd>{{ site.data.projects | size }}</dd></div>
-      </dl>
     </aside>
   </div>
 </section>
@@ -79,11 +74,15 @@
   <div class="home-projects__grid">
     {% for project in site.data.projects %}
       <a class="home-project" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
-        <div class="home-project__topline"><span>{{ project.type }}</span><i class="fas fa-arrow-up-right-from-square"></i></div>
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.description }}</p>
-        <small class="home-project__stack">{{ project.stack | join: ' · ' }}</small>
-        <small>{{ project.status }}</small>
+        <div class="home-project__topline"><span>{{ project.type }}</span><span>{{ project.status }}</span></div>
+        <div class="home-project__content">
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+        </div>
+        <div class="home-project__meta">
+          <small class="home-project__stack">{{ project.stack | join: ' · ' }}</small>
+          <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </div>
       </a>
     {% endfor %}
   </div>

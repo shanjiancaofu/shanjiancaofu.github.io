@@ -621,55 +621,70 @@ body {
 
 .home-projects__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0;
+  border-top: 1px solid rgba(180, 195, 220, 0.16);
 }
 
 .home-project {
-  display: flex;
-  min-height: 215px;
-  padding: 1.3rem;
-  flex-direction: column;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr) 13rem;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(180, 195, 220, 0.16);
+  border-radius: 0;
+  background: transparent;
+  transition: border-color 0.2s ease, background 0.2s ease, padding 0.2s ease;
 }
 
 .home-project:hover {
   text-decoration: none;
-  transform: translateY(-3px);
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  background: rgba(19, 25, 37, 0.7);
 }
 
 .home-project__topline {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.45rem;
   color: #83b5ff;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.home-project__topline i {
-  font-size: 0.75rem;
+.home-project__topline span:last-child {
+  color: #7f8da5;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .home-project h3 {
-  margin: 1.6rem 0 0.6rem;
+  margin: 0 0 0.35rem;
   font-size: 1.35rem;
 }
 
 .home-project p {
-  flex-grow: 1;
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.7;
 }
 
-.home-project small {
-  margin-top: 1.1rem;
-  color: #7f8da5;
+.home-project__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.home-project__meta i {
+  color: #83b5ff;
+  font-size: 0.75rem;
 }
 
 .home-project__stack {
-  margin-top: 1rem !important;
+  margin: 0 !important;
   color: #aab6c9 !important;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
@@ -780,6 +795,14 @@ body {
   .home-projects__grid {
     grid-template-columns: 1fr;
   }
+
+  .home-project {
+    grid-template-columns: 8rem minmax(0, 1fr);
+  }
+
+  .home-project__meta {
+    grid-column: 2;
+  }
 }
 
 @media (max-width: 767px) {
@@ -789,12 +812,29 @@ body {
     padding-top: 0.4rem;
   }
 
+  .home-hero__grid {
+    min-height: auto;
+  }
+
   .home-hero__topline {
     font-size: 0.59rem;
   }
 
   .home-hero h1 {
-    font-size: clamp(2.35rem, 12vw, 4rem);
+    font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+
+  .home-project {
+    display: block;
+    padding: 1.1rem 0;
+  }
+
+  .home-project__content {
+    margin-top: 0.9rem;
+  }
+
+  .home-project__meta {
+    margin-top: 0.9rem;
   }
 
   .featured-notes,
